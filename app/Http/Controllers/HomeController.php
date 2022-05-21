@@ -18,6 +18,16 @@ class HomeController extends Controller
     	}
         return view('home',['posts'=>$posts]);
     }
+    function feed(Request $request){
+    	// $posts=Post::orderBy('id','desc')->simplePaginate(1);
+    	if($request->has('q')){
+    		$q=$request->q;
+    		$posts=Post::where('title','like','%'.$q.'%')->orderBy('id','desc')->paginate(5);
+    	}else{
+    		$posts=Post::orderBy('id','desc')->paginate(5);
+    	}
+        return view('feed',['posts'=>$posts]);
+    }
     // Post Detail
     function detail(Request $request,$slug,$postId){
         // Update post count
@@ -94,7 +104,7 @@ class HomeController extends Controller
         $post->full_img=$reFullImage;
         $post->detail=$request->detail;
         $post->tags=$request->tags;
-        $post->status=0;
+        $post->status=2;
         $post->save();
 
         return redirect('save-post-form')->with('success','Post has been added');

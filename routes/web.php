@@ -23,6 +23,7 @@ use App\Http\Controllers\SettingController;
 // });
 
 Route::get('/',[HomeController::class,'index']);
+Route::get('/feed',[HomeController::class,'feed']);
 Route::get('/detail/{slug}/{id}',[HomeController::class,'detail']);
 Route::get('/all-categories',[HomeController::class,'all_category']);
 Route::get('/category/{slug}/{id}',[HomeController::class,'category']);
@@ -58,3 +59,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

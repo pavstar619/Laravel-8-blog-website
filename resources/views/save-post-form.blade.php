@@ -78,9 +78,9 @@
 						</form>
 					</div>
 				</div>
-				<!-- Recent Posts -->
+				<!-- Recent Articles -->
 				<div class="card mb-4">
-					<h5 class="card-header">Recent Posts</h5>
+					<h5 class="card-header">Recent Articles</h5>
 					<div class="list-group list-group-flush">
 						@if($recent_posts)
 							@foreach($recent_posts as $post)

@@ -3,7 +3,7 @@
 @section('content')
 		<div class="row">
 			<div class="col-md-8">
-				<div class="row mb-5"> 
+				<div class="row mb-5">
 					@if(count($posts)>0)
 						@foreach($posts as $post)
 						<div class="col-md-4">
@@ -38,9 +38,9 @@
 						</form>
 					</div>
 				</div>
-				<!-- Recent Posts -->
+				<!-- Recent Articles -->
 				<div class="card mb-4">
-					<h5 class="card-header">Recent Posts</h5>
+					<h5 class="card-header">Recent Articles</h5>
 					<div class="list-group list-group-flush">
 						@if($recent_posts)
 							@foreach($recent_posts as $post)

@@ -82,6 +82,12 @@
                   </td>
               </tr>
               <tr>
+                  <th>Status</th>
+                  <td>
+                    <textarea class="form-control" name="status">{{$data->status}}</textarea>
+                  </td>
+              </tr>
+              <tr>
                   <td colspan="2">
                       <input type="submit" class="btn btn-primary" />
                   </td>

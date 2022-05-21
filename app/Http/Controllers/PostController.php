@@ -144,6 +144,7 @@ class PostController extends Controller
         $post->full_img=$reFullImage;
         $post->detail=$request->detail;
         $post->tags=$request->tags;
+        $post->status=$request->status;
         $post->save();
 
         return redirect('admin/post/'.$id.'/edit')->with('success','Data has been updated');

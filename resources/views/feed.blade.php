@@ -1,26 +1,28 @@
 @extends('frontlayout')
-@section('title','All Categories')
+@section('title','Home Page')
 @section('content')
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col-md-8">
 				<div class="row mb-5">
-					@if(count($categories)>0)
-						@foreach($categories as $category)
-						<div class="col-md-4">
+					@if(count($posts)>0)
+						@foreach($posts as $post)
+						<div class="col-md-6 mb-3">
 							<div class="card">
-							  <a href="{{url('category/'.Str::slug($category->title).'/'.$category->id)}}"><img src="{{asset('imgs/'.$category->image)}}" class="card-img-top" alt="{{$category->title}}" /></a>
+							  <a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}"><img src="{{asset('imgs/thumb/'.$post->thumb)}}" class="card-img-top" alt="{{$post->title}}" /></a>
 							  <div class="card-body">
-							    <h5 class="card-title"><a href="{{url('category/'.Str::slug($category->title).'/'.$category->id)}}">{{$category->title}}</a></h5>
+							    <h5 class="card-title"><a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}">{{$post->title}}</a></h5>
+							    <p>Last updated: {{$post->updated_at}}</p>
+							    <p>Tags: {{$post->tags}}</p>
 							  </div>
 							</div>
 						</div>
 						@endforeach
 					@else
-					<p class="alert alert-danger">No Category Found</p>
+					<p class="alert alert-danger">No Post Found</p>
 					@endif
 				</div>
 				<!-- Pagination -->
-				{{$categories->links()}}
+				{{$posts->links()}}
 			</div>
 			<!-- Right SIdebar -->
 			<div class="col-md-4">
@@ -58,5 +60,17 @@
 					</div>
 				</div>
 			</div>
-		</div>
+        </div> --}}
+        <div class="row">
+            @if(count($posts)>0)
+						@foreach($posts as $post)
+                        <div class="mb-5">
+                            <p>Title: {{$post->title}}</p>
+                            <p>Detail: {{$post->detail}}</p>
+                        </div>
+						@endforeach
+					@else
+					<p class="alert alert-danger">No Post Found</p>
+					@endif
+        </div>
 @endsection('content')

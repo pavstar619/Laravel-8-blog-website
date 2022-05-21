@@ -10,7 +10,8 @@
 					<h5 class="card-header">
 						{{$detail->title}}
 						<span class="float-right">Total Views={{$detail->views}}</span>
-					</h5>
+                    </h5>
+                    <p>Updated at: {{$detail->updated_at}}</p>
 					<img src="{{asset('imgs/full/'.$detail->full_img)}}" class="card-img-top" alt="{{$detail->title}}">
 					<div class="card-body">
 						{{$detail->detail}}
@@ -67,9 +68,9 @@
 						</form>
 					</div>
 				</div>
-				<!-- Recent Posts -->
+				<!-- Recent Articles -->
 				<div class="card mb-4">
-					<h5 class="card-header">Recent Posts</h5>
+					<h5 class="card-header">Recent Articles</h5>
 					<div class="list-group list-group-flush">
 						@if($recent_posts)
 							@foreach($recent_posts as $post)
